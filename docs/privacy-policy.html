@@ -1,151 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for LockedIn - zero data collection, local-only settings, and transparent open-source practices.">
+    <meta name="description"
+        content="Privacy Policy for LockedIn - zero data collection, local-only settings, and transparent open-source practices.">
     <title>Privacy Policy | LockedIn</title>
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .policy-hero {
-            padding: 50px 0 30px;
+        .policy-header {
+            padding: 80px 0 40px;
             background-color: var(--dark-bg);
-        }
-
-        .policy-hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 2rem;
-            align-items: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .policy-title {
-            font-size: 2.7rem;
-            margin-bottom: 0.8rem;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
         }
 
-        .policy-updated {
+        .policy-slogan {
             color: var(--text-secondary);
-            margin-bottom: 1.8rem;
             font-size: 1rem;
+            margin: 0;
+            letter-spacing: 0.05em;
         }
 
-        .policy-promise {
-            background: linear-gradient(135deg, #1A1A1A 0%, #111111 100%);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--primary-color);
-            border-radius: 12px;
-            padding: 1.4rem 1.5rem;
-            color: var(--text-secondary);
-            line-height: 1.75;
-        }
-
-        .policy-trust-strip {
-            margin-top: 1rem;
+        .policy-layout {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.8rem;
+            grid-template-columns: 240px 1fr;
+            gap: 60px;
+            padding: 60px 0 100px;
         }
 
-        .policy-trust-chip {
+        .policy-sidebar {
+            position: sticky;
+            top: 120px;
+            align-self: start;
+            height: fit-content;
+        }
+
+        .policy-toc {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 0.5rem;
-            background: #171717;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.65rem 0.75rem;
+        }
+
+        .policy-toc-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            opacity: 0.8;
         }
 
-        .policy-trust-chip svg {
-            width: 16px;
-            height: 16px;
-            color: var(--primary-color);
-            flex-shrink: 0;
-        }
-
-        .policy-graphic {
-            background: radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.24), transparent 45%), #171717;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.1rem;
-            box-shadow: var(--shadow);
-        }
-
-        .policy-graphic svg {
-            width: 100%;
-            height: auto;
+        .policy-toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.4rem 0 0.4rem 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
             display: block;
         }
 
-        .policy-section {
-            padding: 20px 0;
-            background-color: var(--dark-bg);
+        .policy-toc a:hover {
+            color: var(--text-primary);
+            border-left-color: var(--border-color);
         }
 
-        .policy-card {
-            background-color: var(--card-bg);
+        .policy-toc a.active {
+            color: var(--text-primary);
+            font-weight: 600;
+            border-left-color: var(--primary-color);
+        }
+
+        .policy-content {
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .policy-text-section {
+            scroll-margin-top: 120px;
+        }
+
+        .policy-promise-box {
+            background-color: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.8rem;
+            border-left: 3px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .policy-promise-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .policy-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        .policy-card h3 {
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
+        .highlight-item {
             display: flex;
             align-items: center;
-            gap: 0.55rem;
+            gap: 0.6rem;
+            background-color: rgba(255, 255, 255, 0.015);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
         }
 
-        .policy-card h3 svg {
-            width: 18px;
-            height: 18px;
-            color: var(--primary-color);
+        .highlight-icon {
+            width: 16px;
+            height: 16px;
+            color: var(--text-secondary);
+            opacity: 0.8;
             flex-shrink: 0;
         }
 
-        .policy-card p,
-        .policy-card li {
+        .highlight-text {
+            font-size: 0.9rem;
+            font-weight: 500;
             color: var(--text-secondary);
-            line-height: 1.8;
         }
 
-        .policy-card ul {
-            margin-top: 0.6rem;
-            margin-left: 1.2rem;
+        .policy-text-section h2 {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .policy-text-section p,
+        .policy-text-section li {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .policy-text-section p strong,
+        .policy-text-section li strong {
+            color: var(--text-primary);
+        }
+
+        .policy-text-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .policy-text-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .policy-text-section a:hover {
+            border-bottom-color: var(--primary-color);
         }
 
         .policy-contact {
-            margin-top: 1.2rem;
-            color: var(--text-secondary);
-        }
-
-        .policy-contact a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .policy-contact a:hover {
-            text-decoration: underline;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
         }
 
         @media (max-width: 900px) {
-            .policy-hero-grid {
-                grid-template-columns: 1fr;
+            .policy-header {
+                padding: 60px 0 30px;
             }
 
-            .policy-trust-strip {
+            .policy-title {
+                font-size: 2.2rem;
+            }
+
+            .policy-layout {
                 grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 0 60px;
+            }
+
+            .policy-sidebar {
+                display: none;
+            }
+
+            .policy-highlights {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -159,7 +228,8 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="features.html">Features</a>
-                    <a href="https://github.com/KartikHalkunde/LockedIn-YT" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/KartikHalkunde/LockedIn-YT" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
                     <button class="download-button" id="headerDownloadBtn">Get Extension</button>
                 </div>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
@@ -167,133 +237,130 @@
         </div>
     </nav>
 
-    <!-- Privacy Hero -->
-    <section class="policy-hero">
+    <!-- Privacy Header -->
+    <header class="policy-header">
         <div class="container">
-            <div class="policy-hero-grid">
-                <div>
-                    <h1 class="policy-title">Privacy Policy for LockedIn</h1>
-                    <p class="policy-updated"><strong>Last Updated:</strong> March 2026</p>
-                    <div class="policy-promise">
-                        <strong>The LockedIn Promise:</strong> LockedIn is designed to be as private as possible. We do not track you, we do not sell your data, and we do not use any external servers.
-                    </div>
-
-                    <div class="policy-trust-strip">
-                        <div class="policy-trust-chip">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            Zero tracking
-                        </div>
-                        <div class="policy-trust-chip">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v7c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg>
-                            Local storage only
-                        </div>
-                        <div class="policy-trust-chip">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
-                            Open-source verified
-                        </div>
-                    </div>
-                </div>
-
-                <div class="policy-graphic" aria-hidden="true">
-                    <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="24" width="320" height="232" rx="14" fill="#101010" stroke="#2A2A2A"/>
-                        <rect x="44" y="48" width="272" height="44" rx="10" fill="#171717" stroke="#2A2A2A"/>
-                        <circle cx="72" cy="70" r="11" fill="#1D1D1D" stroke="#FF0000"/>
-                        <path d="M72 64v12M66 70h12" stroke="#FF0000" stroke-width="2" stroke-linecap="round"/>
-                        <rect x="92" y="61" width="196" height="6" rx="3" fill="#303030"/>
-                        <rect x="92" y="74" width="138" height="6" rx="3" fill="#252525"/>
-                        <rect x="44" y="108" width="272" height="124" rx="10" fill="#151515" stroke="#2A2A2A"/>
-                        <path d="M180 136l44 18v28c0 34-44 50-44 50s-44-16-44-50v-28l44-18z" fill="#111" stroke="#FF0000"/>
-                        <path d="M180 154v22" stroke="#FF0000" stroke-width="4" stroke-linecap="round"/>
-                        <circle cx="180" cy="189" r="4" fill="#FF0000"/>
-                    </svg>
-                </div>
-            </div>
+            <h1 class="policy-title">Privacy Policy for LockedIn</h1>
+            <p class="policy-slogan">LockedIn is designed to be as
+                private as possible.</p>
         </div>
-    </section>
+    </header>
 
-    <!-- Policy Details -->
-    <section class="policy-section">
-        <div class="container">
-            <div class="policy-card">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v7c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg>
-                    1. Data Collection & Storage
-                </h3>
-                <p>LockedIn <strong>does not collect</strong> any personally identifiable information (PII). All extension data—including your selected toggle settings—is stored 100% locally on your device. This data never leaves your browser and is never transmitted to us or any third party.</p>
-            </div>
+    <!-- Privacy Container -->
+    <main class="container">
+        <div class="policy-layout">
+            <!-- Sidebar TOC -->
+            <aside class="policy-sidebar" aria-label="Table of Contents">
+                <nav class="policy-toc">
+                    <span class="policy-toc-title">On This Page</span>
+                    <a href="#overview" class="active">Overview</a>
+                    <a href="#section-1">1. Data Storage</a>
+                    <a href="#section-2">2. Permissions</a>
+                    <a href="#section-3">3. Third Parties</a>
+                    <a href="#section-4">4. Transparency</a>
+                    <a href="#section-5">5. Updates & Contact</a>
+                </nav>
+            </aside>
 
-            <div class="policy-card">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5.5-3.8 8.7-8 10-4.2-1.3-8-4.5-8-10V6l8-4z"/></svg>
-                    2. Use of Permissions
-                </h3>
-                <ul>
-                    <li><strong>YouTube Access:</strong> We only use permissions to access <code>youtube.com</code> to identify and hide distracting elements (like Shorts, the homepage feed, and comments) based on your settings.</li>
-                    <li><strong>Storage:</strong> We use local storage solely to remember your preferences so you don't have to reset them every time you open your browser.</li>
-                    <li><strong>Alarms:</strong> This is used locally to support the break timer feature.</li>
-                </ul>
-            </div>
+            <!-- Document Content -->
+            <article class="policy-content">
 
-            <div class="policy-card">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>
-                    3. Third-Party Services
-                </h3>
-                <p>The extension may contain links to external platforms for donations (such as Buy Me a Coffee or PayPal). These are standard external web links. LockedIn does not process these payments and never has access to your financial details, credit card numbers, or billing address.</p>
-            </div>
+                <section id="section-1" class="policy-text-section">
+                    <h2>1. Data Collection & Storage</h2>
+                    <p>LockedIn <strong>does not collect</strong> any personally identifiable information (PII). All
+                        extension data including your selected toggle settings is stored 100% locally on your device.
+                        This data never leaves your browser and is never transmitted to us or any third party.</p>
+                </section>
 
-            <div class="policy-card">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
-                    4. Open Source Transparency
-                </h3>
-                <p>LockedIn is 100% open-source. We believe in total transparency, and our code is available for public audit at any time to verify these privacy claims.</p>
-                <p><strong>GitHub Repository:</strong> <a href="https://github.com/KartikHalkunde/LockedIn-YT" target="_blank" rel="noopener noreferrer">https://github.com/KartikHalkunde/LockedIn-YT</a></p>
-            </div>
+                <section id="section-2" class="policy-text-section">
+                    <h2>2. Use of Permissions</h2>
+                    <ul>
+                        <li><strong>YouTube Access:</strong> We only use permissions to access <code>youtube.com</code>
+                            to identify and hide distracting elements (like Shorts, the homepage feed, and comments)
+                            based on your settings.</li>
+                        <li><strong>Storage:</strong> We use local storage solely to remember your preferences so you
+                            don't have to reset them every time you open your browser.</li>
+                        <li><strong>Alarms:</strong> This is used locally to support the break timer feature.</li>
+                    </ul>
+                </section>
 
-            <div class="policy-card">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
-                    5. Changes to This Policy
-                </h3>
-                <p>If YouTube changes its layout and we need to adjust how we handle elements, we may update this policy. However, our core philosophy of <strong>zero data collection</strong> will remain the same.</p>
-                <p class="policy-contact"><strong>Contact:</strong> If you have questions about this policy, please open an issue on our <a href="https://github.com/KartikHalkunde/LockedIn-YT/issues" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
-            </div>
+                <section id="section-3" class="policy-text-section">
+                    <h2>3. Third-Party Services</h2>
+                    <p>The extension may contain links to external platforms for donations (such as Buy Me a Coffee or
+                        PayPal). These are standard external web links. LockedIn does not process these payments and
+                        never has access to your financial details, credit card numbers, or billing address.</p>
+                </section>
+
+                <section id="section-4" class="policy-text-section">
+                    <h2>4. Open Source Transparency</h2>
+                    <p>LockedIn is 100% open-source. We believe in total transparency, and our code is available for
+                        public audit at any time to verify these privacy claims.</p>
+                    <p><strong>GitHub Repository:</strong> <a href="https://github.com/KartikHalkunde/LockedIn-YT"
+                            target="_blank" rel="noopener noreferrer">https://github.com/KartikHalkunde/LockedIn-YT</a>
+                    </p>
+                </section>
+
+                <section id="section-5" class="policy-text-section">
+                    <h2>5. Changes to This Policy</h2>
+                    <p>If YouTube changes its layout and we need to adjust how we handle elements, we may update this
+                        policy. However, our core philosophy of <strong>zero data collection</strong> will remain the
+                        same.</p>
+                    <p class="policy-contact"><strong>Contact:</strong> If you have questions about this policy, please
+                        open an issue on our <a href="https://github.com/KartikHalkunde/LockedIn-YT/issues"
+                            target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
+                </section>
+            </article>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/icon.png" alt="LockedIn">
+                <div class="footer-left">
+                    <img src="assets/icon.png" alt="LockedIn" class="footer-logo-img">
+                    <span class="footer-copyright">&copy; 2026 LockedIn. All rights reserved.</span>
                 </div>
-                <div class="footer-credits">
-                    <p>Made with 
-                        <svg class="coffee-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                            <line x1="6" y1="1" x2="6" y2="4"/>
-                            <line x1="10" y1="1" x2="10" y2="4"/>
-                            <line x1="14" y1="1" x2="14" y2="4"/>
-                        </svg>
-                        by <a href="https://github.com/KartikHalkunde" target="_blank" rel="noopener noreferrer">Kartik</a>
-                    </p>
-                </div>
-                <div class="footer-copy">
-                    <a href="privacy-policy.html" class="privacy-link">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="privacy-icon">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                        Privacy Policy
-                    </a>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="features.html">Features</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="https://github.com/KartikHalkunde/LockedIn-YT/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.policy-text-section');
+            const navLinks = document.querySelectorAll('.policy-toc a');
+
+            const handleScroll = () => {
+                let currentSectionId = 'overview';
+                const scrollPosition = window.scrollY + 180; // trigger offset for sticky navbar
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollPosition >= sectionTop) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+    </script>
 </body>
+
 </html>

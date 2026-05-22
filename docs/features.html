@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -20,7 +22,7 @@
                 <div class="nav-links" id="navLinks">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                    <a href="features.html">Features</a>
+                    <a href="features.html" class="active">Features</a>
                     <a href="https://github.com/KartikHalkunde/LockedIn-YT" target="_blank">GitHub</a>
                     <button class="download-button" id="headerDownloadBtn">Get Extension</button>
                 </div>
@@ -33,12 +35,18 @@
     <section class="problem">
         <div class="container">
             <h2>Features</h2>
-            <p class="section-subtitle" style="max-width: 900px; line-height: 1.8; font-size: 1.1rem; text-align: left;">
-                LockedIn gives you complete control over your YouTube experience with 11 powerful, customizable toggles. 
-                Each feature can be enabled or disabled with a single click from the extension popup, allowing you to create 
-                a personalized, distraction-free browsing environment. All features work entirely on your device with zero 
-                data collection - your privacy is never compromised. Whether you want to hide the endless feed, block Shorts, 
-                remove comments, or disable autoplay, LockedIn puts you in the driver's seat. Browse YouTube intentionally, 
+            <p class="section-subtitle"
+                style="max-width: 900px; line-height: 1.8; font-size: 1.1rem; text-align: left;">
+                LockedIn gives you complete control over your YouTube experience with 25+ powerful, customizable
+                toggles.
+                Each feature can be enabled or disabled with a single click from the extension popup, allowing you to
+                create
+                a personalized, distraction-free browsing environment. All features work entirely on your device with
+                zero
+                data collection - your privacy is never compromised. Whether you want to hide the endless feed, block
+                Shorts,
+                remove comments, or disable autoplay, LockedIn puts you in the driver's seat. Browse YouTube
+                intentionally,
                 watch what you came for, and take back control from the algorithm.
             </p>
         </div>
@@ -53,11 +61,12 @@
                 </div>
                 <div class="feature-text">
                     <h2>Homepage Feed Control</h2>
-                    <p>Take back your homepage. LockedIn removes the endless feed of recommended videos, giving you a clean space. No more getting sucked into the algorithm before you even start.</p>
+                    <p>Take back your homepage. LockedIn removes the endless feed of recommended videos, giving you a
+                        clean space. No more getting sucked into the algorithm before you even start.</p>
                     <ul class="feature-list">
-                        <li>✓ Hide Homepage Feed - Clean, distraction-free homepage</li>
+                        <li>✓ Hide Homepage Feed - Clean, Blank Homepage</li>
                         <li>✓ Hide Shorts - Block endless scrolling</li>
-                        <li>✓ Hide Sidebar - Remove trending distractions</li>
+                        <li>✓ Clean Homepage Feed - Hide Featured Content, Playables and other annoying elements</li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +79,9 @@
             <div class="feature-content">
                 <div class="feature-text">
                     <h2>Video Page Control</h2>
-                    <p>Watch what you came for, nothing more. When you're on a video page, LockedIn gives you smart control over sidebar content. Keep your playlists visible while hiding distracting recommendations. Focus on the content you chose, then move on with your day.</p>
+                    <p>Watch what you came for, nothing more. When you're on a video page, LockedIn gives you smart
+                        control over sidebar content. Keep your playlists visible while hiding distracting
+                        recommendations. Focus on the content you chose, then move on with your day.</p>
                     <ul class="feature-list">
                         <li>✓ Smart Sidebar Control - Hide recommendations while keeping playlists</li>
                         <li>✓ Playlist Toggle - Show/hide playlists separately</li>
@@ -96,12 +107,12 @@
                 </div>
                 <div class="feature-text">
                     <h2>Search Results Control</h2>
-                    <p>Find what you're looking for without the noise. Clean search results mean you get exactly what you searched for, without YouTube trying to redirect your attention to trending content or shorts.</p>
+                    <p>Find what you're looking for without the noise. Clean search results mean you get exactly what
+                        you searched for, without YouTube trying to redirect your attention to trending content or
+                        shorts.</p>
                     <ul class="feature-list">
                         <li>✓ Hide Search Recommendations - Clean results only</li>
                         <li>✓ Hide Shorts in Search - Remove from results</li>
-                        <li>✓ Hide Explore - Remove distractions</li>
-                        <li>✓ Hide "More From YouTube" - Clean sidebar</li>
                     </ul>
                 </div>
             </div>
@@ -114,7 +125,8 @@
             <div class="feedback-content-compact">
                 <h3>Have Ideas? We're Listening</h3>
                 <p>Got suggestions for new features or improvements? We'd love to hear from you.</p>
-                <a href="https://forms.gle/8nCefPPrVXGjAZXC7" class="feedback-button" target="_blank" rel="noopener noreferrer">Share Your Ideas</a>
+                <a href="https://github.com/KartikHalkunde/LockedIn-YT/issues" class="feedback-button" target="_blank"
+                    rel="noopener noreferrer">Share Your Ideas</a>
             </div>
         </div>
     </section>
@@ -123,28 +135,17 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/icon.png" alt="LockedIn">
+                <div class="footer-left">
+                    <img src="assets/icon.png" alt="LockedIn" class="footer-logo-img">
+                    <span class="footer-copyright">&copy; 2026 LockedIn. All rights reserved.</span>
                 </div>
-                <div class="footer-credits">
-                    <p>Made with 
-                        <svg class="coffee-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                            <line x1="6" y1="1" x2="6" y2="4"/>
-                            <line x1="10" y1="1" x2="10" y2="4"/>
-                            <line x1="14" y1="1" x2="14" y2="4"/>
-                        </svg>
-                        by <a href="https://github.com/KartikHalkunde" target="_blank">Kartik</a>
-                    </p>
-                </div>
-                <div class="footer-copy">
-                    <a href="privacy-policy.html" class="privacy-link">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="privacy-icon">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                        Privacy Policy
-                    </a>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="features.html">Features</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="https://github.com/KartikHalkunde/LockedIn-YT/blob/main/LICENSE" target="_blank"
+                        rel="noopener noreferrer">License</a>
                 </div>
             </div>
         </div>
@@ -152,4 +153,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
