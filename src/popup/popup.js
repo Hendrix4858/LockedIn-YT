@@ -9,6 +9,7 @@ const DEFAULT_SETTINGS = {
   redirectToSubs: false,
   hideMostRelevantSubscriptions: false,
   hideShortsHomepage: false,
+  hideExploreMoreTopics: false,
   cleanHomepageFeed: false,
   hideCommunityPosts: false,
   hideFeaturedContent: false,
@@ -103,6 +104,7 @@ const I18N_STRINGS = {
     'setting.redirectToSubs': 'Redirect to Subscriptions',
     'setting.hideMostRelevant': "Hide 'Most Relevant'",
     'setting.hideShortsHomepage': 'Hide YouTube Shorts',
+    'setting.hideExploreMoreTopics': 'Hide Explore More Topics',
     'setting.cleanHomepageFeed': 'Clean Homepage Feed',
     'setting.hideCommunityPosts': 'Hide Community Posts',
     'setting.cleanSidebar': 'Clean Sidebar',
@@ -177,6 +179,7 @@ const I18N_STRINGS = {
     'setting.redirectToSubs': 'Redirigir a Suscripciones',
     'setting.hideMostRelevant': "Ocultar 'Más relevantes'",
     'setting.hideShortsHomepage': 'Ocultar Shorts de YouTube',
+    'setting.hideExploreMoreTopics': 'Ocultar Explorar mas temas',
     'setting.cleanHomepageFeed': 'Limpiar feed de inicio',
     'setting.hideCommunityPosts': 'Ocultar publicaciones de la comunidad',
     'setting.cleanSidebar': 'Limpiar barra lateral',
@@ -250,6 +253,7 @@ const I18N_STRINGS = {
     'setting.redirectToSubs': 'सब्सक्रिप्शन पर ले जाएँ',
     'setting.hideMostRelevant': "'Most Relevant' छुपाएँ",
     'setting.hideShortsHomepage': 'YouTube शॉर्ट्स छुपाएँ',
+    'setting.hideExploreMoreTopics': 'Explore more topics छुपाएँ',
     'setting.cleanHomepageFeed': 'होमपेज फ़ीड साफ़ करें',
     'setting.hideCommunityPosts': 'कम्युनिटी पोस्ट छुपाएँ',
     'setting.cleanSidebar': 'साइडबार साफ़ करें',
@@ -323,6 +327,7 @@ const I18N_STRINGS = {
     'setting.redirectToSubs': 'Redirecionar para Inscrições',
     'setting.hideMostRelevant': "Ocultar 'Mais relevantes'",
     'setting.hideShortsHomepage': 'Ocultar Shorts do YouTube',
+    'setting.hideExploreMoreTopics': 'Ocultar Explorar mais temas',
     'setting.cleanHomepageFeed': 'Limpar feed inicial',
     'setting.hideCommunityPosts': 'Ocultar postagens da comunidade',
     'setting.cleanSidebar': 'Limpar barra lateral',
@@ -396,6 +401,7 @@ const I18N_STRINGS = {
     'setting.redirectToSubs': 'Rediriger vers Abonnements',
     'setting.hideMostRelevant': "Masquer 'Les plus pertinents'",
     'setting.hideShortsHomepage': 'Masquer les YouTube Shorts',
+    'setting.hideExploreMoreTopics': 'Masquer Explorer plus de themes',
     'setting.cleanHomepageFeed': 'Nettoyer le fil d\'accueil',
     'setting.hideCommunityPosts': 'Masquer les publications de la communauté',
     'setting.cleanSidebar': 'Nettoyer la barre latérale',
@@ -469,6 +475,7 @@ const I18N_STRINGS = {
     'setting.redirectToSubs': 'Zu Abos umleiten',
     'setting.hideMostRelevant': "'Relevanteste' ausblenden",
     'setting.hideShortsHomepage': 'YouTube Shorts ausblenden',
+    'setting.hideExploreMoreTopics': 'Mehr Themen entdecken ausblenden',
     'setting.cleanHomepageFeed': 'Startseiten-Feed bereinigen',
     'setting.hideCommunityPosts': 'Community-Beiträge ausblenden',
     'setting.cleanSidebar': 'Seitenleiste bereinigen',
@@ -643,6 +650,7 @@ function applyTranslations(languageCode) {
 document.addEventListener('DOMContentLoaded', () => {
   displayVersion();
   setupToggleListeners();
+  setupGroupCollapsibles();
   setupThumbnailModeDropdown();
   setupPowerButton();
   setupMenuButton();
@@ -657,12 +665,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function setupGroupCollapsibles() {
+  const groups = document.querySelectorAll('.settings-group');
+  browser.storage.sync.get(['collapsedGroups'], (result) => {
+    const saved = result.collapsedGroups || {};
+
+    groups.forEach((group) => {
+      const header = group.querySelector('.group-header');
+      const chevron = group.querySelector('.group-chevron');
+      if (!header || !chevron) return;
+
+      const groupKey = group.dataset.group || header.textContent.trim();
+
+      const setCollapsed = (collapsed, persist = false) => {
+        group.classList.toggle('collapsed', collapsed);
+        chevron.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        if (persist) {
+          saved[groupKey] = collapsed;
+          browser.storage.sync.set({ collapsedGroups: saved });
+        }
+      };
+
+      setCollapsed(!!saved[groupKey], false);
+
+      chevron.addEventListener('click', () => {
+        const isCollapsed = group.classList.contains('collapsed');
+        setCollapsed(!isCollapsed, true);
+      });
+    });
+  });
+}
+
 // ===== VERSION DISPLAY =====
 function displayVersion() {
   const versionElement = document.querySelector('.version');
   if (versionElement) {
-    versionElement.textContent = `v.1.1.6`;
-    versionElement.setAttribute('aria-label', `Version 1.1.6`);
+    versionElement.textContent = `v.1.1.7`;
+    versionElement.setAttribute('aria-label', `Version 1.1.7`);
   }
 }
 

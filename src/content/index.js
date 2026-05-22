@@ -499,6 +499,7 @@ function runAll() {
     if (!currentSettings.hideShortsGlobally) {
       hideShortsHomepage(currentSettings.hideShortsHomepage);
     }
+    hideExploreMoreTopics(currentSettings.hideExploreMoreTopics);
     // Use Clean Homepage Feed master toggle or individual sub-toggles
     if (currentSettings.cleanHomepageFeed) {
       cleanHomepageFeed(true);
@@ -572,6 +573,7 @@ function runAll() {
     if (!currentSettings.hideShortsGlobally) {
       hideShortsHomepage(currentSettings.hideShortsHomepage);
     }
+    hideExploreMoreTopics(currentSettings.hideExploreMoreTopics);
     // Use Clean Homepage Feed master toggle or individual sub-toggles
     if (currentSettings.cleanHomepageFeed) {
       cleanHomepageFeed(true);
@@ -625,6 +627,7 @@ function restoreAllElements() {
   hideFeed(false);
   hideMostRelevantSubscriptions(false);
   hideShortsHomepage(false);
+  hideExploreMoreTopics(false);
   hideCommunityPosts(false);
   hideFeaturedContent(false);
   hideMembersOnly(false);

@@ -1,4 +1,11 @@
-## [1.1.6] - 2026-05-13
+## [1.1.7] - 2026-05-23
+### Added
+- Added a new Homepage toggle to hide the "Explore more topics" shelf
+
+### Changed
+- Added collapsible sections in the popup for easier navigation
+
+## [1.1.6] - 2026-05-23
 ### Changed
 - Removed the Show Stats feature for now; improving the stats logic and fixing issues, will add it back with a corrected implementation
 

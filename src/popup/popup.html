@@ -119,8 +119,15 @@
 
     <div class="settings-scroll-area" id="settingsArea">
       <div class="settings-container">
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.homepage">Homepage</h2>
+        <div class="settings-group" data-group="homepage">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle Homepage section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.homepage">Homepage</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.hideFeed">Hide Homepage Feed</span>
@@ -141,6 +148,13 @@
               <span class="setting-label" data-i18n-key="setting.hideShortsHomepage">Hide YouTube Shorts</span>
               <label class="toggle-switch">
                 <input type="checkbox" data-setting="hideShortsHomepage">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="setting-row">
+              <span class="setting-label" data-i18n-key="setting.hideExploreMoreTopics">Hide Explore More Topics</span>
+              <label class="toggle-switch">
+                <input type="checkbox" data-setting="hideExploreMoreTopics">
                 <span class="toggle-slider"></span>
               </label>
             </div>
@@ -185,8 +199,15 @@
           </div>
         </div>
 
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.subscriptionsPage">Subscriptions Page</h2>
+        <div class="settings-group" data-group="subscriptions">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle Subscriptions section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.subscriptionsPage">Subscriptions Page</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.hideMostRelevant">Hide 'Most Relevant'</span>
@@ -198,8 +219,15 @@
           </div>
         </div>
 
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.shorts">YouTube Shorts</h2>
+        <div class="settings-group" data-group="shorts">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle YouTube Shorts section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.shorts">YouTube Shorts</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.hideShortsGlobal">Hide Shorts (All Pages)</span>
@@ -218,8 +246,15 @@
           </div>
         </div>
 
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.thumbnails">Thumbnails</h2>
+        <div class="settings-group" data-group="thumbnails">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle Thumbnails section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.thumbnails">Thumbnails</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.hideVideoThumbnails">Hide Thumbnails</span>
@@ -242,8 +277,15 @@
           </div>
         </div>
 
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.video">Video Page</h2>
+        <div class="settings-group" data-group="video">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle Video Page section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.video">Video Page</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.hideSidebar">Hide Video Sidebar</span>
@@ -307,8 +349,15 @@
           </div>
         </div>
 
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.search">Search Results</h2>
+        <div class="settings-group" data-group="search">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle Search Results section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.search">Search Results</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.hideRecommended">Hide Recommended Videos</span>
@@ -327,8 +376,15 @@
           </div>
         </div>
 
-        <div class="settings-group">
-          <h2 class="group-title" data-i18n-key="group.sidebar">YouTube Sidebar</h2>
+        <div class="settings-group" data-group="sidebar">
+          <div class="group-header" role="group">
+            <button class="group-chevron" type="button" aria-expanded="true" aria-label="Toggle YouTube Sidebar section">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 6 15 12 9 18"></polyline>
+              </svg>
+            </button>
+            <span class="group-title" data-i18n-key="group.sidebar">YouTube Sidebar</span>
+          </div>
           <div class="settings-list">
             <div class="setting-row">
               <span class="setting-label" data-i18n-key="setting.cleanSidebar">Clean Sidebar</span>

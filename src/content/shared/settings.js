@@ -101,6 +101,7 @@ const DEFAULT_SETTINGS = {
 	redirectToSubs: false,
 	hideMostRelevantSubscriptions: false,
 	hideShortsHomepage: false,
+	hideExploreMoreTopics: false,
 	cleanHomepageFeed: false,
 	hideCommunityPosts: false,
 	hideFeaturedContent: false,

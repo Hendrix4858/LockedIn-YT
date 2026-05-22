@@ -4,6 +4,8 @@ if (typeof browser !== 'undefined' && browser.runtime && browser.runtime.onMessa
 		if (message && message.action === 'settingChanged') {
 			if (message.setting === 'hidePlayables') {
 				hidePlayables(message.value);
+			} else if (message.setting === 'hideExploreMoreTopics') {
+				hideExploreMoreTopics(message.value);
 			} else if (message.setting === 'cleanHomepageFeed') {
 				cleanHomepageFeed(message.value);
 			}
@@ -488,6 +490,30 @@ function hidePlayables(shouldHide) {
 		playablesShouldHide = !!shouldHide;
 		setupPlayablesObserver();
 		handlePlayablesSections();
+}
+
+function hideExploreMoreTopics(shouldHide) {
+	const isHomepage = window.location.pathname === '/' || window.location.pathname === '/home';
+	if (!isHomepage && shouldHide) return;
+
+	const hiddenSelector = '[data-lockedin-hidden="explore-more-topics"]';
+	if (!shouldHide) {
+		document.querySelectorAll(hiddenSelector).forEach(el => {
+			el.removeAttribute('hidden');
+			el.style.display = '';
+			el.removeAttribute('data-lockedin-hidden');
+		});
+		return;
+	}
+
+	document.querySelectorAll('ytd-chips-shelf-with-video-shelf-renderer').forEach(renderer => {
+		const container = renderer.closest('ytd-rich-section-renderer') || renderer;
+		if (!container.hasAttribute('data-lockedin-hidden')) {
+			container.setAttribute('hidden', '');
+			container.style.display = 'none';
+			container.setAttribute('data-lockedin-hidden', 'explore-more-topics');
+		}
+	});
 }
 
 
