@@ -2,13 +2,28 @@
 <img src="/docs/assets/clearIcon.png" width="160" height="160" style="display: block; margin: 0 auto"/>
 <h1>LockedIn</h1>
 <p>
-  <a> YouTube Productivity Browser Extension </a>
+  <h3> YouTube Productivity Browser Extension </h3>
 </p>
 
 <div style="padding: 16px; margin: 16px 0; background-color: #FFFBE5; border-left: 6px solid #FFC107; border-radius: 4px; text-align: left;">
 <h2 style="margin: 0;"><strong>About</strong></h2>
-LockedIn is an open-source browser extension that helps you focus on YouTube by removing distracting elements like the homepage feed, Shorts, recommended videos, comments and more.
+LockedIn is an open-source browser extension that helps you focus on YouTube by removing distracting elements like Shorts, Homepage feed, Recommended videos, Thumbnails and more.
 </div>
+
+<br></br>
+<div align="center">
+
+![Latest release](https://img.shields.io/github/v/release/KartikHalkunde/LockedIn-YT?style=for-the-badge&labelColor=0d1117&color=green)
+[![License](https://img.shields.io/github/license/KartikHalkunde/LockedIn-YT?style=for-the-badge&labelColor=0d1117&color=orange)](https://github.com/KartikHalkunde/LockedIn-YT/blob/main/LICENSE)
+[![Downloads](https://img.shields.io/badge/downloads-500%2B-blue?style=for-the-badge&labelColor=0d1117)](https://github.com/KartikHalkunde/LockedIn-YT/releases)
+
+</br>
+
+[![Rating](https://img.shields.io/badge/Store%20Rating-⭐%20⭐%20⭐%20⭐%20⭐-24292f?style=for-the-badge&labelColor=0d1117)](https://addons.mozilla.org/en-US/firefox/addon/lockedin-yt/reviews/?utm_content=search&utm_medium=referral&utm_source=addons.mozilla.org)
+
+</div> 
+
+---
 
 <h1>Screenshots</h1>
 
@@ -19,15 +34,7 @@ LockedIn is an open-source browser extension that helps you focus on YouTube by 
 <img src="docs/assets/searchresults.png" width="45%" />
 <img src="docs/assets/CleanerVideoPage.png" width="45%" />
 
-<div align="center">
-<h1>Release numbers</h1>
-</div>
-
-[![Latest release](https://img.shields.io/github/v/release/KartikHalkunde/LockedIn-YT?style=for-the-badge)](https://github.com/KartikHalkunde/LockedIn-YT/releases)
-[![Downloads](https://img.shields.io/badge/downloads-500%2B-success?style=for-the-badge)](https://github.com/KartikHalkunde/LockedIn-YT)
-[![Rating](https://img.shields.io/badge/Store%20Rating-⭐%20⭐%20⭐%20⭐%20⭐-24292f?style=for-the-badge)](https://chromewebstore.google.com/detail/lockedin/ddpdgiidmcljefnhnfpgndbdnimbhdgh)
-
-</div>
+---
 
 <div align="center">
 <h1>Download Now</h1>
@@ -44,13 +51,19 @@ LockedIn is an open-source browser extension that helps you focus on YouTube by 
 <a href="https://microsoftedge.microsoft.com/addons/detail/hibjbjgfbmhpiaapeccnfddnpabnlklj"><img src="docs/assets/edge-badge.png" alt="Get it on Edge" height="60" style="border-radius: 8px;"></a>
 </td>
 </tr>
+
 </table>
-
+</div>
 </div>
 
+---
 <div align="center">
-<h1>Table of Contents</h1>
-</div>
+
+# Table of Contents
+
+<table>
+<tr>
+<td align="left">
 
 - [Features](#features)
 - [Building from Source](project-docs/BUILDING.md)
@@ -61,9 +74,21 @@ LockedIn is an open-source browser extension that helps you focus on YouTube by 
 - [Discussions](https://github.com/KartikHalkunde/LockedIn-YT/discussions)
 - [Website](https://kartikhalkunde.github.io/LockedIn-YT/)
 
-<div align="center">
-<h1>Features</h1>
+</td>
+</tr>
+</table>
+
 </div>
+
+---
+
+<div align="center">
+
+# Features
+
+<table>
+<tr>
+<td align="left">
 
 - Hide Homepage Feed (replaces with motivational content)
 - Hide YouTube Featured and Members-only content
@@ -75,19 +100,21 @@ LockedIn is an open-source browser extension that helps you focus on YouTube by 
 - Hide Search Recommendations, Subscriptions & "More From YouTube"
 - Disable Autoplay
 - Instant element hiding with zero delays
-- New organized UI with 4 logical groups
-- Power button to quickly toggle entire extension
-- "Take a Break" mode (temporarily disables extension with auto-redirect)
-- **Privacy:** Zero data collection. No external network requests.
 
+</td>
+</tr>
+</table>
+
+</div>
 <div align="center">
 <img src="docs/assets/meme.png" width="55%" />
 
-
+---
 <div align="center">
-<h1>Support Me</h1>
+<h1>Support LockedIn</h1>
 
-If LockedIn helps you stay focused, consider supporting its development!
+<h3>If LockedIn helps you stay focused, consider supporting its development!</h3>
+</br>
 
 **For Global Users:**
 
@@ -113,5 +140,7 @@ If LockedIn helps you stay focused, consider supporting its development!
 
 <br/><br/>
 
-Made with ☕ by [Kartik Halkunde](https://github.com/KartikHalkunde)
+---
+
+Made with ❤️ by [Kartik Halkunde](https://github.com/KartikHalkunde)
 </div>
