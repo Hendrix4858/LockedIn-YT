@@ -42,10 +42,27 @@ foreach ($file in $requiredFiles) {
     Write-Host "  ✓ src/$file" -ForegroundColor Green
 }
 
-Write-Host "Creating extension ZIP from src/..." -ForegroundColor White
-Push-Location $Src
+Write-Host "Preparing Firefox build in a temporary folder..." -ForegroundColor White
+$tempFirefoxBuild = Join-Path $Root "temp-firefox-build"
+if (Test-Path $tempFirefoxBuild) {
+    Remove-Item -Recurse -Force $tempFirefoxBuild
+}
+
+New-Item -ItemType Directory -Path $tempFirefoxBuild | Out-Null
+Copy-Item -Path (Join-Path $Src "*") -Destination $tempFirefoxBuild -Recurse -Force
+
+$tempFirefoxManifestPath = Join-Path $tempFirefoxBuild "manifest.json"
+$firefoxManifest = Get-Content $tempFirefoxManifestPath -Raw | ConvertFrom-Json
+$firefoxManifest.name = "LockedIn"
+$firefoxManifest | ConvertTo-Json -Depth 100 | Set-Content -Path $tempFirefoxManifestPath -Encoding UTF8
+
+Write-Host "Creating Firefox extension ZIP..." -ForegroundColor White
+Push-Location $tempFirefoxBuild
 Compress-Archive -Path * -DestinationPath $firefoxZip -Force
 Pop-Location
+
+Remove-Item -Recurse -Force $tempFirefoxBuild
+Write-Host "  ✓ Cleaned up temporary build files." -ForegroundColor Green
 
 Write-Host "Creating source ZIP..." -ForegroundColor White
 $sourceItems = @(

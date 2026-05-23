@@ -839,6 +839,11 @@ body {
   transition: opacity 0.2s ease;
 }
 
+.popup-container.collapse-state-restoring .settings-scroll-area {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .popup-container.disabled .settings-scroll-area {
   display: none;
 }
@@ -984,6 +989,11 @@ body {
   max-height: 0;
   opacity: 0;
   pointer-events: none;
+}
+
+.settings-group.collapse-state-restoring .settings-list,
+.settings-group.collapse-state-restoring .group-chevron svg {
+  transition: none;
 }
 
 .settings-list {

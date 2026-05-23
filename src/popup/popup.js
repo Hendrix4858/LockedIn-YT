@@ -667,6 +667,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupGroupCollapsibles() {
   const groups = document.querySelectorAll('.settings-group');
+  const popupContainer = document.querySelector('.popup-container');
+
+  if (popupContainer) {
+    popupContainer.classList.add('collapse-state-restoring');
+  }
+
   browser.storage.sync.get(['collapsedGroups'], (result) => {
     const saved = result.collapsedGroups || {};
 
@@ -686,12 +692,20 @@ function setupGroupCollapsibles() {
         }
       };
 
+      group.classList.add('collapse-state-restoring');
       setCollapsed(!!saved[groupKey], false);
 
       chevron.addEventListener('click', () => {
         const isCollapsed = group.classList.contains('collapsed');
         setCollapsed(!isCollapsed, true);
       });
+    });
+
+    requestAnimationFrame(() => {
+      groups.forEach((group) => group.classList.remove('collapse-state-restoring'));
+      if (popupContainer) {
+        popupContainer.classList.remove('collapse-state-restoring');
+      }
     });
   });
 }

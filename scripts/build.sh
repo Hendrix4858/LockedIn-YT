@@ -41,8 +41,33 @@ for file in "${required_files[@]}"; do
 done
 
 # 1. BUILD FIREFOX (Directly from src)
-echo "Creating Firefox extension ZIP directly from src/..."
-(cd "$SRC_DIR" && zip -q -r "$DIST_DIR/$FIREFOX_ZIP" . -x "*.DS_Store" "*/__MACOSX/*")
+echo "Preparing Firefox build in a temporary folder..."
+TEMP_FIREFOX_DIR="$ROOT_DIR/temp-firefox-build"
+
+rm -rf "$TEMP_FIREFOX_DIR"
+mkdir -p "$TEMP_FIREFOX_DIR"
+cp -r "$SRC_DIR/"* "$TEMP_FIREFOX_DIR/"
+
+python - "$TEMP_FIREFOX_DIR/manifest.json" <<'PY'
+import json
+import pathlib
+import sys
+
+manifest_path = pathlib.Path(sys.argv[1])
+data = json.loads(manifest_path.read_text(encoding='utf-8'))
+data['name'] = 'LockedIn'
+
+manifest_path.write_text(
+  json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+  encoding='utf-8'
+)
+PY
+
+echo "Creating Firefox extension ZIP..."
+(cd "$TEMP_FIREFOX_DIR" && zip -q -r "$DIST_DIR/$FIREFOX_ZIP" . -x "*.DS_Store" "*/__MACOSX/*")
+
+rm -rf "$TEMP_FIREFOX_DIR"
+echo "  ✓ Cleaned up temporary build files."
 
 # 2. BUILD CHROMIUM / EDGE (Using a temporary ghost folder)
 echo "Preparing Chromium build in a temporary folder..."
