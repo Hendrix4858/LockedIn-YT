@@ -975,7 +975,16 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 18px;
     padding: 1.35rem;
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.love-card:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.025) 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .love-top {
@@ -1046,7 +1055,7 @@ body {
 }
 
 .love-card-wide {
-    grid-column: span 3;
+    grid-column: span 2;
 }
 
 /* ==================== Footer ==================== */
