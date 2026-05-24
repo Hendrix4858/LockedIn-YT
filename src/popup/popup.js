@@ -56,11 +56,13 @@ const LANGUAGE_LABELS = {
   hi: { label: 'हिन्दी' },
   pt: { label: 'Português' },
   fr: { label: 'Français' },
-  de: { label: 'Deutsch' }
+  de: { label: 'Deutsch' },
+  'zh-CN': {label: "简体中文"},
+  'zh-TW': {label: "繁体中文"}
 };
 
 const LANGUAGE_OPTIONS = Object.keys(LANGUAGE_LABELS);
-const SUPPORTED_LANGUAGES = ['en', 'es', 'hi', 'pt', 'fr', 'de'];
+const SUPPORTED_LANGUAGES = ['en', 'es', 'hi', 'pt', 'fr', 'de', 'zh-CN', 'zh-TW'];
 const FALLBACK_LANGUAGE = 'en';
 const THUMBNAIL_MODE_OPTIONS = ['off', 'blurred', 'hidden', 'reveal-on-hover', 'solid-color'];
 const THUMBNAIL_MODE_LABEL_KEYS = {
@@ -523,6 +525,156 @@ const I18N_STRINGS = {
     'customMeme.maxImages': 'Es sind höchstens 5 Bilder erlaubt. Du hast bereits {existing} und wolltest {added} hinzufügen.',
     'customMeme.unableUpdate': 'Benutzerdefinierte Bilder konnten nicht aktualisiert werden. Bitte erneut versuchen.',
     'customMeme.unableSave': 'Diese Bilder konnten nicht gespeichert werden. Bitte erneut versuchen.'
+  },
+  'zh-CN': {
+    'tooltip.menu': '菜单',
+    'tooltip.power': '扩展开关',
+    'tooltip.close': '关闭',
+    'power.instant': '立即关闭',
+    'power.ten': '关闭10分钟',
+    'power.twenty': '关闭20分钟',
+    'power.thirty': '关闭30分钟',
+    'menu.title': '菜单',
+    'menu.option.hideFeedQuote': '隐藏励志语录',
+    'menu.option.appearance': '扩展外观',
+    'menu.option.language': '扩展语言',
+    'menu.option.hideFeedQuote.desc': '在首页信息流被屏蔽时隐藏显示的励志语录。',
+    'menu.option.appearance.desc': '为扩展弹窗选择自动、浅色或深色主题。',
+    'menu.option.language.desc': '手动设置弹窗语言，或保持自动以跟随浏览器语言。',
+    'appearance.option.auto': '自动',
+    'appearance.option.light': '浅色',
+    'appearance.option.dark': '深色',
+    'language.option.auto': '自动',
+    'group.homepage': '主页',
+    'group.subscriptionsPage': '订阅页面',
+    'setting.hideFeed': '隐藏首页信息流',
+    'setting.redirectToSubs': '重定向到订阅页',
+    'setting.hideMostRelevant': "隐藏“最相关”",
+    'setting.hideShortsHomepage': '隐藏 YouTube Shorts',
+    'setting.hideExploreMoreTopics': '隐藏“探索更多主题”',
+    'setting.cleanHomepageFeed': '清理首页信息流',
+    'setting.hideCommunityPosts': '隐藏社区帖子',
+    'setting.cleanSidebar': '清理侧边栏',
+    'setting.hideFeaturedContent': '隐藏精选内容',
+    'setting.hideMembersOnly': '隐藏会员专属内容',
+    'setting.hidePlayables': '隐藏 YouTube 小游戏',
+      'group.shorts': 'YouTube Shorts',
+    'setting.hideShortsGlobal': '隐藏 Shorts(所有页面)',
+    'setting.redirectShorts': '重定向 Shorts',
+    'group.thumbnails': '缩略图',
+    'setting.hideVideoThumbnails': '隐藏缩略图',
+    'thumbnail.disable': '禁用',
+    'thumbnail.blur': '模糊',
+    'thumbnail.hidden': '隐藏',
+    'thumbnail.revealOnHover': '悬停显示',
+    'thumbnail.solidColor': '纯色',
+    'group.video': '视频页面',
+    'setting.hideSidebar': '隐藏视频侧边栏',
+    'setting.hideRecommended': '隐藏推荐视频',
+    'setting.hideSidebarShorts': '隐藏 Shorts',
+    'setting.hidePlaylists': '隐藏播放列表',
+    'setting.hideSubscriptions': '隐藏订阅内容',
+    'setting.hideEndCards': '隐藏结束画面卡片',
+    'setting.hideComments': '隐藏评论',
+    'setting.hideLiveChat': '隐藏直播聊天',
+    'setting.disableAutoplay': '关闭自动播放',
+    'group.search': '搜索结果',
+    'setting.hideShortsSearch': '隐藏 YouTube 短视频',
+    'group.sidebar': 'YouTube 侧边栏',
+    'setting.hideExplore': '隐藏探索与趋势',
+    'setting.hideMoreFromYT': '隐藏更多 YouTube 内容',
+    'state.lockedinOff': 'LockedIn 已关闭',
+    'state.breakTimerPrefix': '将在以下时间后回来：',
+    'sponsor.title': '支持 LockedIn',
+      'sponsor.body': `通过 <a href="https://github.com/sponsors/KartikHalkunde" target="_blank" class="sponsor-link">GitHub Sponsors<svg class="heart-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25zm0 0l.345.666a.752.752 0 01-.69 0L8 14.25z"/></svg></a> 或 <a href="https://kartikhalkunde.github.io/LockedIn-YT/upi.html" target="_blank" class="sponsor-link">UPI</a> 捐赠以支持开发者.`,
+    'sponsor.bodySecondary': `如果无法进行资金支持，也可以分享 LockedIn 给朋友，或在 <a href="https://addons.mozilla.org/en-US/firefox/addon/lockedin-yt/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="_blank" class="sponsor-link">Firefox</a><br>或 <a href="https://microsoftedge.microsoft.com/addons/detail/lockedin/hibjbjgfbmhpiaapeccnfddnpabnlklj" target="_blank" class="sponsor-link">Edge</a> 上留下评价。`,
+    'feedback.title': '反馈',
+    'feedback.requestHeading': '功能建议',
+    'feedback.requestText': `如果你有让 LockedIn 更好的想法，可以 <a href="https://forms.gle/sPsfwB6C16Yx299f9" target="_blank" class="feedback-link-red">在这里提交</a>。`,
+    'feedback.bugHeading': '发现 Bug？',
+    'feedback.bugText': `YouTube 经常更新界面，如果你发现问题，可以 <a href="https://forms.gle/9zPoc7yQpDcKD4kP9" target="_blank" class="feedback-link-red">在这里报告</a>`,
+    'footer.sponsor': '赞助',
+    'footer.feedback': '反馈',
+    'customMeme.tooLarge': '文件“{filename}”过大！每张图片最大 500KB。',
+    'customMeme.invalidType': '文件“{filename}”类型无效！请使用 PNG、JPG、GIF 或 WebP。',
+    'customMeme.maxImages': '最多允许 5 张图片！当前已有 {existing} 张，尝试添加 {added} 张。',
+    'customMeme.unableUpdate': '无法更新自定义图片，请重试。',
+    'customMeme.unableSave': '无法保存这些图片，请重试。'
+  },
+  'zh-TW': {
+    'tooltip.menu': '菜單',
+    'tooltip.power': '擴展開關',
+    'tooltip.close': '關閉',
+    'power.instant': '立即關閉',
+    'power.ten': '關閉10分鐘',
+    'power.twenty': '關閉20分鐘',
+    'power.thirty': '關閉30分鐘',
+    'menu.title': '菜單',
+    'menu.option.hideFeedQuote': '隱藏勵志語錄',
+    'menu.option.appearance': '擴展外觀',
+    'menu.option.language': '擴展語言',
+    'menu.option.hideFeedQuote.desc': '在首頁信息流被屏蔽時隱藏顯示的勵志語錄。',
+    'menu.option.appearance.desc': '爲擴展彈窗選擇自動、淺色或深色主題。',
+    'menu.option.language.desc': '手動設置彈窗語言，或保持自動以跟隨瀏覽器語言。',
+    'appearance.option.auto': '自動',
+    'appearance.option.light': '淺色',
+    'appearance.option.dark': '深色',
+    'language.option.auto': '自動',
+    'group.homepage': '主頁',
+    'group.subscriptionsPage': '訂閱頁面',
+    'setting.hideFeed': '隱藏首頁信息流',
+    'setting.redirectToSubs': '重定向到訂閱頁',
+    'setting.hideMostRelevant': "隱藏“最相關”",
+    'setting.hideShortsHomepage': '隱藏 YouTube Shorts',
+    'setting.hideExploreMoreTopics': '隱藏“探索更多主題”',
+    'setting.cleanHomepageFeed': '清理首頁信息流',
+    'setting.hideCommunityPosts': '隱藏社區帖子',
+    'setting.cleanSidebar': '清理側邊欄',
+    'setting.hideFeaturedContent': '隱藏精選內容',
+    'setting.hideMembersOnly': '隱藏會員專屬內容',
+    'setting.hidePlayables': '隱藏 YouTube 小遊戲',
+      'group.shorts': 'YouTube Shorts',
+    'setting.hideShortsGlobal': '隱藏 Shorts(所有頁面)',
+    'setting.redirectShorts': '重定向 Shorts',
+    'group.thumbnails': '縮略圖',
+    'setting.hideVideoThumbnails': '隱藏縮略圖',
+    'thumbnail.disable': '禁用',
+    'thumbnail.blur': '模糊',
+    'thumbnail.hidden': '隱藏',
+    'thumbnail.revealOnHover': '懸停顯示',
+    'thumbnail.solidColor': '純色',
+    'group.video': '視頻頁面',
+    'setting.hideSidebar': '隱藏視頻側邊欄',
+    'setting.hideRecommended': '隱藏推薦視頻',
+    'setting.hideSidebarShorts': '隱藏 Shorts',
+    'setting.hidePlaylists': '隱藏播放列表',
+    'setting.hideSubscriptions': '隱藏訂閱內容',
+    'setting.hideEndCards': '隱藏結束畫面卡片',
+    'setting.hideComments': '隱藏評論',
+    'setting.hideLiveChat': '隱藏直播聊天',
+    'setting.disableAutoplay': '關閉自動播放',
+    'group.search': '搜索結果',
+    'setting.hideShortsSearch': '隱藏 YouTube 短視頻',
+    'group.sidebar': 'YouTube 側邊欄',
+    'setting.hideExplore': '隱藏探索與趨勢',
+    'setting.hideMoreFromYT': '隱藏更多 YouTube 內容',
+    'state.lockedinOff': 'LockedIn 已關閉',
+    'state.breakTimerPrefix': '將在以下時間後回來：',
+    'sponsor.title': '支持 LockedIn',
+      'sponsor.body': `通過 <a href="https://github.com/sponsors/KartikHalkunde" target="_blank" class="sponsor-link">GitHub Sponsors<svg class="heart-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25zm0 0l.345.666a.752.752 0 01-.69 0L8 14.25z"/></svg></a> 或 <a href="https://kartikhalkunde.github.io/LockedIn-YT/upi.html" target="_blank" class="sponsor-link">UPI</a> 捐贈以支持開發者.`,
+    'sponsor.bodySecondary': `如果無法進行資金支持，也可以分享 LockedIn 給朋友，或在 <a href="https://addons.mozilla.org/en-US/firefox/addon/lockedin-yt/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="_blank" class="sponsor-link">Firefox</a><br>或 <a href="https://microsoftedge.microsoft.com/addons/detail/lockedin/hibjbjgfbmhpiaapeccnfddnpabnlklj" target="_blank" class="sponsor-link">Edge</a> 上留下評價。`,
+    'feedback.title': '反饋',
+    'feedback.requestHeading': '功能建議',
+    'feedback.requestText': `如果你有讓 LockedIn 更好的想法，可以 <a href="https://forms.gle/sPsfwB6C16Yx299f9" target="_blank" class="feedback-link-red">在這裏提交</a>。`,
+    'feedback.bugHeading': '發現 Bug？',
+    'feedback.bugText': `YouTube 經常更新界面，如果你發現問題，可以 <a href="https://forms.gle/9zPoc7yQpDcKD4kP9" target="_blank" class="feedback-link-red">在這裏報告</a>`,
+    'footer.sponsor': '贊助',
+    'footer.feedback': '反饋',
+    'customMeme.tooLarge': '文件“{filename}”過大！每張圖片最大 500KB。',
+    'customMeme.invalidType': '文件“{filename}”類型無效！請使用 PNG、JPG、GIF 或 WebP。',
+    'customMeme.maxImages': '最多允許 5 張圖片！當前已有 {existing} 張，嘗試添加 {added} 張。',
+    'customMeme.unableUpdate': '無法更新自定義圖片，請重試。',
+    'customMeme.unableSave': '無法保存這些圖片，請重試。'
   }
 };
 
@@ -583,12 +735,25 @@ function resolveLanguagePreference(preferred) {
   if (preferred && preferred !== 'auto' && SUPPORTED_LANGUAGES.includes(preferred)) {
     return preferred;
   }
+
   const browserLang = (getBrowserLanguage() || '').toLowerCase();
-  const exactMatch = SUPPORTED_LANGUAGES.find((code) => browserLang === code);
-  if (exactMatch) {
-    return exactMatch;
+  const exactMatch = SUPPORTED_LANGUAGES.find(code => browserLang === code.toLowerCase());
+  if (exactMatch) return exactMatch;
+
+  if (browserLang.startsWith('zh-')) {
+    if (/^zh-(hant|tw|hk|mo)/.test(browserLang)) {
+      return 'zh-TW';
+    }
+    return 'zh-CN';
   }
-  const partialMatch = SUPPORTED_LANGUAGES.find((code) => browserLang.startsWith(`${code}-`));
+
+  if (browserLang === 'zh') {
+    return 'zh-CN';
+  }
+
+  const partialMatch = SUPPORTED_LANGUAGES.find(
+    code => browserLang.startsWith(code.toLowerCase() + '-')
+  );
   return partialMatch || FALLBACK_LANGUAGE;
 }
 
@@ -612,12 +777,12 @@ function applyTranslations(languageCode) {
   const normalized = SUPPORTED_LANGUAGES.includes(languageCode) ? languageCode : FALLBACK_LANGUAGE;
   activeLanguage = normalized;
   document.documentElement.setAttribute('lang', normalized);
-  
+
   const elements = document.querySelectorAll('[data-i18n-key]');
   elements.forEach((el) => {
     const key = el.dataset.i18nKey;
     if (!key) return;
-    
+
     const attr = el.dataset.i18nAttr;
     const type = el.dataset.i18nType;
     const value = translate(key, null, normalized);
@@ -628,12 +793,12 @@ function applyTranslations(languageCode) {
     } else if (type === 'html') {
       // 1. Clear existing content
       el.textContent = '';
-      
+
       // 2. Use DOMParser to parse the string into a temporary document
       // This avoids using the forbidden ".innerHTML" property entirely
       const parser = new DOMParser();
       const doc = parser.parseFromString(value, 'text/html');
-      
+
       // 3. Move the parsed nodes into your element
       const nodes = Array.from(doc.body.childNodes);
       nodes.forEach(node => {
@@ -801,24 +966,24 @@ function setupPowerButton() {
   if (!powerButton || !powerDropdown) {
     return;
   }
-  
+
   browser.storage.sync.get(['extensionEnabled', 'takeBreak', 'breakDuration', 'breakStartTime'], (result) => {
     const isEnabled = result.extensionEnabled !== undefined ? result.extensionEnabled : true;
-    
+
     if (!isEnabled && result.breakStartTime && result.takeBreak) {
       startBreakCountdown(Number(result.breakStartTime), Number(result.breakDuration));
     }
   });
-  
+
   powerButton.addEventListener('click', (e) => {
     e.stopPropagation();
     browser.storage.sync.get(['extensionEnabled'], (result) => {
       const isEnabled = result.extensionEnabled !== undefined ? result.extensionEnabled : true;
       if (!isEnabled) {
-        browser.storage.sync.set({ 
-          extensionEnabled: true, 
+        browser.storage.sync.set({
+          extensionEnabled: true,
           breakStartTime: null,
-          takeBreak: false 
+          takeBreak: false
         }, () => {
           if (browser.runtime.lastError) {
             console.error('LockedIn: Failed to save power state', browser.runtime.lastError);
@@ -851,18 +1016,18 @@ function setupPowerButton() {
       }
     });
   });
-  
+
   document.addEventListener('click', (e) => {
     if (!powerButton.contains(e.target) && !powerDropdown.contains(e.target)) {
       powerDropdown.classList.remove('open');
     }
   });
-  
+
   dropdownOptions.forEach(option => {
     option.addEventListener('click', () => {
       const duration = parseInt(option.dataset.duration, 10);
       powerDropdown.classList.remove('open');
-      const saveData = { 
+      const saveData = {
         extensionEnabled: false,
         takeBreak: duration > 0,
         breakDuration: duration
@@ -1099,7 +1264,7 @@ function updatePowerState(isEnabled) {
   const breakTimerText = document.getElementById('breakTimerText');
   const headerLogo = document.querySelector('.header-logo');
   const isLightMode = popupContainer.classList.contains('light-mode');
-  
+
   if (isEnabled) {
     popupContainer.classList.remove('disabled');
     if (breakTimerText) breakTimerText.style.display = 'none';
@@ -1120,10 +1285,10 @@ let breakInterval = null;
 function startBreakCountdown(startTime, duration) {
   const breakTimerText = document.getElementById('breakTimerText');
   if (!breakTimerText) return;
-  
+
   breakTimerText.style.display = 'block';
   const breakPrefix = translate('state.breakTimerPrefix') || 'See you in';
-  
+
   if (breakInterval) clearInterval(breakInterval);
   const normalizedDuration = Number(duration);
   const fallbackDuration = Number.isFinite(normalizedDuration) && normalizedDuration > 0 ? normalizedDuration : 5;
@@ -1134,14 +1299,14 @@ function startBreakCountdown(startTime, duration) {
     browser.storage.sync.set({ breakStartTime: normalizedStart });
   }
   const endTime = normalizedStart + (fallbackDuration * 60 * 1000);
-  
+
   function updateTimer() {
     const currentTime = Date.now();
     const remaining = Math.max(0, endTime - currentTime);
     const totalSeconds = Math.floor(remaining / 1000);
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
-    
+
     if (remaining <= 0) {
       clearInterval(breakInterval);
       breakTimerText.textContent = `${breakPrefix} 0:00`;
@@ -1152,10 +1317,10 @@ function startBreakCountdown(startTime, duration) {
       });
       return;
     }
-    
+
     breakTimerText.textContent = `${breakPrefix} ${minutes}:${seconds.toString().padStart(2, '0')}`;
   }
-  
+
   updateTimer();
   breakInterval = setInterval(updateTimer, 1000);
 }
@@ -1164,10 +1329,10 @@ function startBreakCountdown(startTime, duration) {
 function setupCustomMemeUpload() {
   const fileInput = document.getElementById('customMemeInput');
   const gallery = document.getElementById('customMemeGallery');
-  
+
   if (!fileInput || !gallery) return;
   if (fileInput.disabled || fileInput.dataset.disabled === 'true') return;
-  
+
   function renderGallery(memes) {
     gallery.innerHTML = '';
     if (!memes || memes.length === 0) {
@@ -1201,7 +1366,7 @@ function setupCustomMemeUpload() {
       });
     }));
   }
-  
+
   function deleteMeme(index) {
     browser.storage.local.get('customMemes', (result) => {
       const memes = result.customMemes || [];
@@ -1219,7 +1384,7 @@ function setupCustomMemeUpload() {
       }
     });
   }
-  
+
   function notifyContentScript(memes) {
     browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]) {
@@ -1227,11 +1392,11 @@ function setupCustomMemeUpload() {
       }
     });
   }
-  
+
   browser.storage.local.get('customMemes', (result) => {
     if (result.customMemes && result.customMemes.length > 0) renderGallery(result.customMemes);
   });
-  
+
   fileInput.addEventListener('change', function(e) {
     const files = Array.from(e.target.files);
     if (!files.length) return;
@@ -1403,7 +1568,7 @@ function setupToggleListeners() {
           });
         }
       }
-      
+
       // Auto-enable Clean Homepage Feed when all sub-toggles are enabled
       if (["hideCommunityPosts", "hideFeaturedContent", "hideMembersOnly", "hidePlayables"].includes(settingId)) {
         const communityToggle = document.querySelector('input[data-setting="hideCommunityPosts"]');
@@ -1411,11 +1576,11 @@ function setupToggleListeners() {
         const membersToggle = document.querySelector('input[data-setting="hideMembersOnly"]');
         const playablesToggle = document.querySelector('input[data-setting="hidePlayables"]');
         const cleanFeedToggle = document.querySelector('input[data-setting="cleanHomepageFeed"]');
-        
+
         if (communityToggle?.checked && featuredToggle?.checked && membersToggle?.checked && playablesToggle?.checked) {
           // All sub-toggles are on, enable parent and collapse sub-toggles
           cleanFeedToggle.checked = true;
-          browser.storage.sync.set({ 
+          browser.storage.sync.set({
             cleanHomepageFeed: true,
             hideCommunityPosts: false,
             hideFeaturedContent: false,
@@ -1438,18 +1603,18 @@ function setupToggleListeners() {
           return; // Skip the normal storage save below
         }
       }
-      
+
       // Auto-enable Clean Sidebar when all sub-toggles are enabled
       if (['hideExplore', 'hideMoreFromYT', 'hideSubscriptions'].includes(settingId)) {
         const exploreToggle = document.querySelector('input[data-setting="hideExplore"]');
         const moreFromYTToggle = document.querySelector('input[data-setting="hideMoreFromYT"]');
         const subscriptionsToggle = document.querySelector('input[data-setting="hideSubscriptions"]');
         const cleanSidebarToggle = document.querySelector('input[data-setting="cleanSidebar"]');
-        
+
         if (exploreToggle?.checked && moreFromYTToggle?.checked && subscriptionsToggle?.checked) {
           // All sub-toggles are on, enable parent and collapse sub-toggles
           cleanSidebarToggle.checked = true;
-          browser.storage.sync.set({ 
+          browser.storage.sync.set({
             cleanSidebar: true,
             hideExplore: false,
             hideMoreFromYT: false,
@@ -1470,18 +1635,18 @@ function setupToggleListeners() {
           return; // Skip the normal storage save below
         }
       }
-      
+
       // Auto-enable Hide Video Sidebar when all sub-toggles are enabled
       if (['hideRecommended', 'hideSidebarShorts', 'hidePlaylists'].includes(settingId)) {
         const recommendedToggle = document.querySelector('input[data-setting="hideRecommended"]');
         const shortsToggle = document.querySelector('input[data-setting="hideSidebarShorts"]');
         const playlistsToggle = document.querySelector('input[data-setting="hidePlaylists"]');
         const sidebarToggle = document.querySelector('input[data-setting="hideSidebar"]');
-        
+
         if (recommendedToggle?.checked && shortsToggle?.checked && playlistsToggle?.checked) {
           // All sub-toggles are on, enable parent and collapse sub-toggles
           sidebarToggle.checked = true;
-          browser.storage.sync.set({ 
+          browser.storage.sync.set({
             hideSidebar: true,
             hideRecommended: false,
             hideSidebarShorts: false,
@@ -1502,7 +1667,7 @@ function setupToggleListeners() {
           return; // Skip the normal storage save below
         }
       }
-      
+
       browser.storage.sync.set({ [settingId]: isChecked }, () => {
         browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
           if (tabs[0]) browser.tabs.sendMessage(tabs[0].id, { action: 'settingChanged', setting: settingId, value: isChecked }).catch(() => {});
