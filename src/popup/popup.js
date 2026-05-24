@@ -154,7 +154,17 @@ const I18N_STRINGS = {
     'customMeme.invalidType': 'File "{filename}" has an invalid type! Use PNG, JPG, GIF, or WebP.',
     'customMeme.maxImages': 'Maximum 5 images allowed! You already have {existing} and tried to add {added}.',
     'customMeme.unableUpdate': 'Unable to update custom images. Please try again.',
-    'customMeme.unableSave': 'Unable to save these images. Please try again.'
+    'customMeme.unableSave': 'Unable to save these images. Please try again.',
+    'sponsor.tagline': 'If you find LockedIn helpful, please consider making a contribution.',
+    'donation.github.title': 'GitHub Sponsors',
+    'donation.github.subtitle': 'Little to no platform fee',
+    'donation.bmc.title': 'Buy Me a Coffee',
+    'donation.bmc.subtitle': 'Simple one-time support',
+    'donation.paypal.title': 'PayPal',
+    'donation.paypal.subtitle': 'Secure payments worldwide',
+    'donation.upi.title': 'UPI',
+    'donation.upi.subtitle': 'For Indian users',
+    'sponsor.review.text': 'If you can\'t contribute financially, I\'d love if you could share LockedIn with friends or leave a review on the Firefox or Edge stores.'
   },
   es: {
     'tooltip.menu': 'Menú',
@@ -599,7 +609,18 @@ const I18N_STRINGS = {
     'customMeme.invalidType': '文件“{filename}”类型无效！请使用 PNG、JPG、GIF 或 WebP。',
     'customMeme.maxImages': '最多允许 5 张图片！当前已有 {existing} 张，尝试添加 {added} 张。',
     'customMeme.unableUpdate': '无法更新自定义图片，请重试。',
-    'customMeme.unableSave': '无法保存这些图片，请重试。'
+    'customMeme.unableSave': '无法保存这些图片，请重试。',
+    'customMeme.unableSave': '無法保存這些圖片，請重試。',
+    'sponsor.tagline': '如果你觉得 LockedIn 有帮助，请考虑贡献支持。',
+    'donation.github.title': 'GitHub 赞助',
+    'donation.github.subtitle': '几乎无平台手续费',
+    'donation.bmc.title': '请我喝杯咖啡',
+    'donation.bmc.subtitle': '简单的一次性支持',
+    'donation.paypal.title': 'PayPal',
+    'donation.paypal.subtitle': '全球安全支付',
+    'donation.upi.title': 'UPI',
+    'donation.upi.subtitle': '适用于印度用户',
+    'sponsor.review.text': '如果无法经济支持，希望你能将 LockedIn 分享给朋友，或在 Firefox 和 Edge 商店留下好评。'
   },
   'zh-TW': {
     'tooltip.menu': '菜單',
@@ -674,7 +695,17 @@ const I18N_STRINGS = {
     'customMeme.invalidType': '文件“{filename}”類型無效！請使用 PNG、JPG、GIF 或 WebP。',
     'customMeme.maxImages': '最多允許 5 張圖片！當前已有 {existing} 張，嘗試添加 {added} 張。',
     'customMeme.unableUpdate': '無法更新自定義圖片，請重試。',
-    'customMeme.unableSave': '無法保存這些圖片，請重試。'
+    'customMeme.unableSave': '無法保存這些圖片，請重試。',
+    'sponsor.tagline': '如果你覺得 LockedIn 有幫助，請考慮貢獻支持。',
+    'donation.github.title': 'GitHub 贊助',
+    'donation.github.subtitle': '幾乎無平臺手續費',
+    'donation.bmc.title': '請我喝杯咖啡',
+    'donation.bmc.subtitle': '簡單的一次性支持',
+    'donation.paypal.title': 'PayPal',
+    'donation.paypal.subtitle': '全球安全支付',
+    'donation.upi.title': 'UPI',
+    'donation.upi.subtitle': '適用於印度用戶',
+    'sponsor.review.text': '如果無法經濟支持，希望你能將 LockedIn 分享給朋友，或在 Firefox 和 Edge 商店留下好評。'
   }
 };
 
