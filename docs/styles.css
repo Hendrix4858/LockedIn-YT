@@ -1123,9 +1123,14 @@ body {
 }
 
 .analytics-icon {
-    width: 16px;
-    height: 16px;
+    width: 1em;
+    height: 1em;
+    max-width: 1em;
+    max-height: 1em;
+    flex: 0 0 1em;
     opacity: 0.85;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* ==================== Features Page Styles ==================== */
