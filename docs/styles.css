@@ -1117,18 +1117,6 @@ body {
     font-size: 0.85rem;
     margin: 0;
     line-height: 1.5;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-}
-
-.analytics-icon {
-    width: 1.2em;
-    height: 1.2em;
-    flex: 0 0 1.2em;
-    opacity: 0.9;
-    display: inline-block;
-    vertical-align: -0.125em;
 }
 
 
