@@ -25,7 +25,7 @@
 
     <title>LockedIn - Stay Focused on YouTube | Block Shorts & Distractions</title>
     <link rel="icon" type="image/png" href="assets/icon.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260526">
 </head>
 
 <body>
@@ -33,14 +33,16 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">
+                <a class="logo" href="index.html" aria-label="LockedIn home">
                     <img src="assets/logo.png" alt="LockedIn Logo">
-                </div>
+                </a>
                 <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
                 <div class="nav-links" id="navLinks">
-                    <a href="index.html" class="active">Home</a>
                     <a href="about.html">About</a>
                     <a href="features.html">Features</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="https://github.com/KartikHalkunde/LockedIn-YT/blob/main/LICENSE" target="_blank"
+                        rel="noopener noreferrer">License</a>
                     <a href="https://github.com/KartikHalkunde/LockedIn-YT" target="_blank">GitHub</a>
                     <button class="download-button" id="headerDownloadBtn">Get Extension</button>
                 </div>
@@ -296,18 +298,20 @@
                     <span class="footer-copyright">&copy; 2026 LockedIn. All rights reserved.</span>
                 </div>
                 <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="features.html">Features</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="https://github.com/KartikHalkunde/LockedIn-YT/blob/main/LICENSE" target="_blank"
-                        rel="noopener noreferrer">License</a>
+                    <p class="analytics-note">
+                        Traffic analytics powered by Cloudflare Analytics.
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aae23b8f22814c1f8a7b5c0fafcc2ef9"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+
 </body>
 
 </html>

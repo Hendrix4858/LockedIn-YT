@@ -74,6 +74,8 @@ body {
     display: flex;
     align-items: center;
     flex: 0 0 auto;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .logo img {
@@ -1110,6 +1112,14 @@ body {
     color: var(--text-primary);
 }
 
+.analytics-note {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
 /* ==================== Features Page Styles ==================== */
 .features-hero {
     padding: 120px 0 60px;
@@ -1597,6 +1607,10 @@ body {
         gap: 0.5rem;
     }
 
+    .analytics-note {
+        justify-content: center;
+    }
+
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -1850,6 +1864,10 @@ body {
     .footer-left {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .analytics-note {
+        justify-content: center;
     }
 
     .footer-links {

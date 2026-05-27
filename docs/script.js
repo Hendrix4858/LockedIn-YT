@@ -4,38 +4,37 @@ const navLinks = document.getElementById('navLinks');
 const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
 if (mobileMenuToggle && navLinks) {
+    const closeMobileMenu = () => {
+        navLinks.classList.remove('active');
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.classList.remove('active');
+        }
+        mobileMenuToggle.textContent = '☰';
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    };
+
     // Toggle menu
     mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        const isOpen = navLinks.classList.toggle('active');
         if (mobileMenuOverlay) {
-            mobileMenuOverlay.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active', isOpen);
         }
         // Change icon between hamburger and X
-        mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        mobileMenuToggle.textContent = isOpen ? '✕' : '☰';
+        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
         // Prevent body scroll when menu is open
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close menu when clicking on a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.classList.remove('active');
-            }
-            mobileMenuToggle.textContent = '☰';
-            document.body.style.overflow = '';
-        });
+    // Close menu when clicking on a link or button
+    navLinks.querySelectorAll('a, button').forEach(item => {
+        item.addEventListener('click', closeMobileMenu);
     });
 
     // Close menu when clicking overlay
     if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            mobileMenuToggle.textContent = '☰';
-            document.body.style.overflow = '';
-        });
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     }
 }
 
